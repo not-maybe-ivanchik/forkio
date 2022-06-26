@@ -321,7 +321,7 @@
   }
 }
 .intro {
-  background-image: url(./dist/img/intro-bg.jpg);
+  background-image: url(/dist/img/intro-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -405,7 +405,7 @@
   padding-top: 34px;
 }
 .feedback {
-  background-image: url(./dist/img/feedback-bg.jpg);
+  background-image: url(/dist/img/feedback-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50%;
@@ -864,7 +864,7 @@
   align-items: center;
   flex-direction: column;
   position: relative;
-  background: url(./dist/img/back.jpg) center no-repeat;
+  background: url(/dist/img/back.jpg) center no-repeat;
   background-size: cover;
   width: 100%;
   box-shadow: 0 0 200px 200px #4a3b4e inset;
@@ -875,7 +875,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: url(./dist/img/back.jpg) center no-repeat;
+  background: url(/dist/img/back.jpg) center no-repeat;
   background-size: cover;
   filter: blur(50px);
   width: 100%;
