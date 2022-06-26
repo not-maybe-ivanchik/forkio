@@ -405,7 +405,7 @@
   padding-top: 34px;
 }
 .feedback {
-  background-image: url(/dist/img/feedback-bg.jpg);
+  background-image: url(../img/feedback-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50%;
