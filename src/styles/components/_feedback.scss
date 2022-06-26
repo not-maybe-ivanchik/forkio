@@ -1,0 +1,54 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.feedback {
+  background-image: url("/dist/img/feedback-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  padding-top: 57px;
+  box-shadow: -100px 0px 200px #4b3b4e inset;
+}
+
+.feedback__title {
+  @include text-styles("Montserrat", none, 700, 36px, 48px);
+  text-align: center;
+  color: #fff;
+  margin: 0;
+}
+
+.feedback__description {
+  @include text-styles("Lato", none, 400, 14px, 21px);
+  color: $footer-sub-text;
+  max-width: 251px;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 19px;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 245px;
+    height: 2px;
+    background: $footer-sub-line;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    @media (min-width: $tablet-bp) {
+      width: $tablet-bp;
+      margin: 0 auto;
+    }
+    @media (min-width: $desktop-bp) {
+      width: 780px;
+    }
+  }
+
+  @media (min-width: $tablet-bp) {
+    max-width: 704px;
+  }
+  @media (min-width: $desktop-bp) {
+    max-width: 900px;
+  }
+}

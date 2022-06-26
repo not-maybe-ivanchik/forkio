@@ -1,0 +1,142 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.dropdown-menu__open-icon {
+  margin-top: 35px;
+  margin-right: 5px;
+  @media (min-width: $tablet-bp) {
+    display: none;
+  }
+
+  &.active {
+    display: none;
+  }
+}
+
+.dropdown-menu__close-icon {
+  fill: #fff;
+  display: none;
+  margin-top: 30px;
+  margin-right: 15px;
+  position: relative;
+
+  &.active {
+    display: block;
+    position: relative;
+  }
+}
+
+.menu-list {
+  display: none;
+  @include list-style;
+
+  &.active {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: #333333;
+    width: 291px;
+    animation: growDown 300ms ease-in-out forwards;
+  }
+
+  @keyframes growDown {
+    0% {
+      transform: translateZ(200px) transLateY(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateZ(-10px) transLateY(0px);
+      opacity: 100%;
+    }
+  }
+
+  @media (min-width: $tablet-bp) {
+    @include list-style;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding-bottom: 18px;
+  }
+
+  @media (min-width: $desktop-bp) {
+    position: absolute;
+    right: 15em;
+    top: 44px;
+  }
+}
+
+.menu-item {
+  border-bottom: none;
+  z-index: 2;
+
+  &.active {
+    border-bottom: 1px solid rgba(132, 142, 151, 20%);
+  }
+
+  @media (min-width: $tablet-bp) {
+    padding-left: 23px;
+    padding-right: 23px;
+
+    &.active {
+      display: none;
+      border-bottom: none;
+    }
+  }
+}
+
+.menu-item__link {
+  @include text-styles("Montserrat", none, 700, 16px, 18px);
+  text-decoration: none;
+  color: $primary-color;
+
+  position: relative;
+  @media (min-width: $desktop-bp) {
+    @include text-styles("Montserrat", none, 700, 16px, 17px);
+    &:hover {
+      color: #fff;
+    }
+  }
+  @media (max-width: $tablet-bp) {
+    &.active {
+      @include text-styles("Montserrat", none, 400, 26px, 26px);
+      color: #fff;
+      display: block;
+      padding-top: 29px;
+      padding-bottom: 21px;
+      padding-left: 38px;
+    }
+
+    &:active {
+      color: $primary-color;
+    }
+
+    &:active::before {
+      color: $primary-color;
+      content: "";
+      width: 8px;
+      height: 53px;
+      background: $primary-color;
+      position: absolute;
+      left: 2px;
+      top: 13px;
+    }
+
+    &:focus {
+      color: $primary-color;
+    }
+
+    &:focus::before {
+      content: "";
+      width: 8px;
+      height: 53px;
+      background: $primary-color;
+      position: absolute;
+      left: 2px;
+      top: 13px;
+    }
+  }
+}

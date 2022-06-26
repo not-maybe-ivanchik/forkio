@@ -1,0 +1,185 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.future-skills {
+  @include flex(center, center, column);
+
+  @media (min-width: $desktop-bp) {
+    flex-direction: row;
+    align-items: flex-end;
+    background: $future-skills-bg-color;
+    column-gap: 49px;
+    padding-top: 98px;
+    padding-bottom: 33px;
+  }
+}
+
+.future-skills__title {
+  grid-area: first;
+  text-align: center;
+  margin: 0px 0px 36px 0px;
+  @include text-styles("Montserrat", normal, 700, 32px, 38px);
+  color: $primary-color;
+
+  &::before {
+    content: "<";
+  }
+  &::after {
+    content: ">";
+  }
+
+  @media (min-width: $tablet-bp) {
+    font-size: 42px;
+    line-height: 44px;
+    margin-bottom: 19px;
+  }
+  @media (min-width: $desktop-bp) {
+    display: none;
+  }
+}
+
+.future-skills__list {
+  grid-area: second;
+  @include flex(center, center, column);
+  row-gap: 40px;
+  @include list-style;
+
+  @media (min-width: $tablet-bp) {
+    row-gap: 60px;
+  }
+}
+
+.future-skills__item {
+  @include flex(center, center, column);
+
+  @media (min-width: $tablet-bp) {
+    flex-direction: row;
+    &:first-child {
+      margin-left: 35px;
+      margin-right: 41px;
+    }
+    &:nth-child(2) {
+      margin-left: 31px;
+      margin-right: 22px;
+    }
+    &:nth-child(3) {
+      margin-left: 46px;
+      margin-right: 16px;
+    }
+    &:last-child {
+      margin-left: 41px;
+      margin-right: 27px;
+    }
+
+    &:first-child > .future-skills__text-container {
+      margin-left: 23px;
+    }
+    &:nth-child(2) > .future-skills__text-container {
+      margin-left: 43px;
+    }
+    &:nth-child(3) > .future-skills__text-container {
+      margin-left: 58px;
+    }
+    &:last-child > .future-skills__text-container {
+      margin-left: 52px;
+    }
+  }
+  @media (min-width: $desktop-bp) {
+    flex-direction: row;
+    &:first-child {
+      margin-left: 90px;
+      margin-right: 0;
+    }
+    &:nth-child(2) {
+      margin-left: 91px;
+      margin-right: 0;
+    }
+    &:nth-child(3) {
+      margin-left: 106px;
+      margin-right: 0;
+    }
+    &:last-child {
+      margin-left: 101px;
+      margin-right: 0;
+    }
+  }
+}
+
+.future-skills__text-container {
+  @media (min-width: $desktop-bp) {
+    max-width: 380px;
+  }
+}
+
+.future-skills__min-title {
+  text-align: center;
+  @include text-styles("Montserrat", normal, 700, 16px, 16px);
+  color: $main-text-color;
+  margin: 27px 0px 14px 0px;
+
+  @media (min-width: $tablet-bp) {
+    text-align: left;
+    margin-top: 0;
+    &_first {
+      margin-top: 50px;
+    }
+  }
+  @media (min-width: $desktop-bp) {
+    &_first {
+      margin: 0;
+    }
+  }
+}
+
+.future-skills__desc {
+  text-align: center;
+  @include text-styles("Montserrat", normal, 400, 14px, 27px);
+  color: $sub-text-color;
+  margin: 0;
+  padding: 0 25px;
+
+  @media (min-width: $tablet-bp) {
+    text-align: left;
+    padding: 0;
+  }
+}
+
+.future-skills__big-img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-top: 96px;
+  margin-left: auto;
+  width: 90%;
+
+  @media (min-width: $tablet-bp) {
+    margin-top: 76px;
+  }
+  @media (min-width: $desktop-bp) {
+    width: max-content;
+  }
+}
+
+.future-skills__title-img-container {
+  display: none;
+  @media (min-width: $desktop-bp) {
+    display: block;
+    text-align: center;
+    @include text-styles("Montserrat", normal, 700, 48px, 50px);
+    color: $primary-color;
+
+    &::before {
+      content: "<";
+    }
+    &::after {
+      content: ">";
+    }
+    margin-right: 63px;
+    margin-bottom: 18px;
+  }
+}
+
+.future-skills__big-img {
+  width: 100%;
+  height: 100%;
+}

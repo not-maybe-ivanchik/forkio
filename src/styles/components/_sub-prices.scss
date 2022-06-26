@@ -1,0 +1,227 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.sub-prices {
+  @include flex(center, center, column);
+  position: relative;
+  background: url(../../../dist/img/back.jpg) center no-repeat;
+  background-size: cover;
+  width: 100%;
+  box-shadow: 0px 0px 200px 200px #4a3b4e inset;
+  z-index: -1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background: url(../../../dist/img/back.jpg) center no-repeat;
+    background-size: cover;
+    filter: blur(50px);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+.sub-prices__title {
+  text-align: center;
+  @include text-styles("Montserrat", normal, 700, 28px, 42px);
+  color: $text-color;
+  margin: 14px 0px 32px 0px;
+
+  @media (min-width: $tablet-bp) {
+    font-size: 42px;
+    line-height: 44px;
+    margin: 88px 0px 39px 0px;
+  }
+  @media (min-width: $desktop-bp) {
+    font-size: 48px;
+    line-height: 50px;
+    margin: 112px 0px 61px 0px;
+  }
+}
+
+.sub-prices__list {
+  display: grid;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four";
+  justify-items: center;
+  align-content: center;
+  @include list-style;
+  row-gap: 18px;
+
+  @media (min-width: $tablet-bp) {
+    grid-template:
+      "one two"
+      "three four";
+    column-gap: 25px;
+    row-gap: 30px;
+    align-items: start;
+    margin-bottom: 94px;
+  }
+  @media (min-width: $desktop-bp) {
+    grid-template: "one two three four";
+    align-items: center;
+    margin-bottom: 67px;
+    column-gap: 15px;
+  }
+}
+
+.sub-prices__item {
+  @include flex(center, center, column);
+  width: 257px;
+  position: relative;
+
+  &.active {
+    width: 299px;
+  }
+  &.active::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: $price-active, $alpha: 0.84);
+  }
+  &.active::before {
+    content: "";
+    position: absolute;
+    top: 285px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 5px;
+    background: $primary-color;
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: $text-color, $alpha: 0.11);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 260px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 5px;
+    background: $primary-color;
+  }
+
+  &:first-child > .sub-price__option-container {
+    margin-bottom: 54px;
+  }
+
+  &:first-child {
+    grid-area: one;
+  }
+  &:nth-child(2) {
+    grid-area: two;
+  }
+  &:nth-child(3) {
+    grid-area: three;
+  }
+  &:last-child {
+    grid-area: four;
+    @media (min-width: $tablet-bp) {
+      margin-top: 31px;
+    }
+    @media (min-width: $desktop-bp) {
+      margin-top: 0;
+    }
+  }
+}
+
+.sub-prices__min-title {
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  @include text-styles("Montserrat", normal, 400, 24px, 24px);
+  color: $text-color;
+  padding: 36px 0px;
+  width: 100%;
+  margin: 0;
+  z-index: 1;
+
+  &.active {
+    padding: 43px 0px;
+  }
+  &.active::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: 0.11);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: $text-color, $alpha: 0.06);
+  }
+}
+
+.sub-prices__price {
+  @include text-styles("Montserrat", normal, 400, 60px, 62px);
+  color: $text-color;
+  margin: 30px 0px 20px 0px;
+  z-index: 1;
+
+  &.active {
+    font-size: 82px;
+    margin: 14px 0px 16px 0px;
+  }
+}
+
+.sub-prices__number {
+  font-weight: 700;
+}
+
+.sub-prices__duration {
+  text-transform: uppercase;
+  @include text-styles("Montserrat", normal, 400, 14px, 16px);
+  color: $text-color;
+  margin: 0px 0px 73px 0px;
+  z-index: 1;
+
+  &.active {
+    margin: 0px 0px 111px 0px;
+  }
+}
+
+.sub-price__option-container {
+  @include flex(center, center, column);
+  row-gap: 15px;
+  margin-bottom: 36px;
+  z-index: 1;
+
+  &.active {
+    line-height: 32px;
+    margin-bottom: 83px;
+  }
+}
+.sub-prices__options {
+  text-align: center;
+  @include text-styles("Montserrat", normal, 400, 16px, 18px);
+  color: $text-color;
+  margin: 0;
+  z-index: 1;
+}
